@@ -33,9 +33,13 @@
                                         <button onclick="Image()">Image</button>
                                         <button onclick="Listing()">Listing</button>
                                         <button onclick="Bold()">Bold</button>
-                                        <button onclick="Delete()">Delete</button>
                                         <button onclick="Top()">TopPage</button>
                                         <button onclick="Down()">DownPage</button>
+                                        <br>
+                                                                         
+                                         <button onclick="Download_pdf1()">Download_pdf1</button>
+										<iframe id="my_iframe" style="display:none;"></iframe>
+                                        <button onclick="Delete()">Delete</button>
                                         <button onclick="Redo()" id='redo' disabled>Redo</button>
                                         <button onclick="Undo()" id='undo' disabled>Undo</button>
                                         <p><textarea id="text"  name="text"></textarea></p>

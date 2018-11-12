@@ -1,3 +1,4 @@
+
 //----------------------------------------------------------------------------------------------------------
    var textarea=document.getElementById("text");
     
@@ -269,7 +270,7 @@ var text=prompt("Enter text","");
 			number=l;
 			
 				
-			
+		
 	 function Disc_List(x,y,usl,bgind)
             {
 				 var expressionText =  document.getElementById("text").value;
@@ -3739,9 +3740,10 @@ redo = document.getElementById('redo');
                 document.getElementById("RESULTHTML").innerHTML=resultStr;
                 Make();
 			}
+			
 			function Txt(usl,bgind)
 			{
-			//alert("Txt");
+			alert("Txt6");
 			
             var textarea=document.getElementById("text");
             document.getElementById("text").focus();

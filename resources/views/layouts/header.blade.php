@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta Content-Type:application/pdf charset="UTF-8"  name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<link rel="stylesheet" href="{{URL::asset('css/style.css')}}">
 		
@@ -19,9 +19,11 @@
 	<div id="result">
         <span id="RESULTTEXT"></span>
         </div>
-    <script type="text/javascript" src="{{URL::asset('js/jquery-1.12.2.min.js')}}"></script>
-    <script type="text/javascript" src="{{URL::asset('js/jquery.js')}}"></script>
-	<script type="text/javascript" src="{{URL::asset('js/script.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-1.12.2.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
+	<!--<script type="text/javascript" src="{{URL::asset('js/script.js')}}"></script>-->
+     <!--<script type="text/javascript" src="{{URL::asset('assets/js/script.js')}}"></script>-->
     <!--<script type="text/javascript" src="{{ URL::to('js/script.js') }}"></script>-->
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
     </body>
 </html>
