@@ -3752,7 +3752,7 @@ redo = document.getElementById('redo');
 					window.location = "download.php";	
 						}
 			/ * Вспомогательная функция * /
-function download_file (fileURL, fileName) {
+/*function download_file (fileURL, fileName) {
     // для не-IE
     if (! window.ActiveXObject) {
         var save = document.createElement ('a');
@@ -3775,7 +3775,7 @@ function download_file (fileURL, fileName) {
     }
 
     // для IE <11
-    else if (!! window.ActiveXObject && document.execCommand) {
+    /*else if (!! window.ActiveXObject && document.execCommand) {
         var _window = window.open (файлURL, '_blank');
         _window.document.close ();
         _window.document.execCommand ('SaveAs', true, fileName || fileURL)
@@ -3787,7 +3787,7 @@ function download_file (fileURL, fileName) {
 						}	
 						function Download_pdf3(){
 					download_file ('http://localhost/git/git.pdf', git.pdf);	
-						}		
+						}	*/	
 
 			function Txt(usl,bgind)
 			{
