@@ -36,7 +36,9 @@
                                         <button onclick="Top()">TopPage</button>
                                         <button onclick="Down()">DownPage</button>
                                         <br>
-                                                                         
+                                        <button onclick="Download_pdf()">Download_pdf</button>
+                                        <button onclick="Download_pdf3()">Download_pdf3</button>
+                                           <button onclick="Download_pdf2()">Download_pdf2</button>                               
                                          <button onclick="Download_pdf1()">Download_pdf1</button>
 										<iframe id="my_iframe" style="display:none;"></iframe>
                                         <button onclick="Delete()">Delete</button>

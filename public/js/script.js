@@ -1,5 +1,4 @@
-
-//----------------------------------------------------------------------------------------------------------
+1//----------------------------------------------------------------------------------------------------------
    var textarea=document.getElementById("text");
     
   var uagent    = navigator.userAgent.toLowerCase();
@@ -270,7 +269,7 @@ var text=prompt("Enter text","");
 			number=l;
 			
 				
-		
+			
 	 function Disc_List(x,y,usl,bgind)
             {
 				 var expressionText =  document.getElementById("text").value;
@@ -3740,18 +3739,72 @@ redo = document.getElementById('redo');
                 document.getElementById("RESULTHTML").innerHTML=resultStr;
                 Make();
 			}
-			
+			function Download(url) {
+				    document.getElementById('my_iframe').src = url;
+				};
+			function Download_pdf(){
+				//Download('http://localhost/git/git.pdf');
+				var url='http://localhost/git/git.pdf';
+			//alert("Download_pdf");
+			document.getElementById('my_iframe').src = url;	
+			}
+			/*function Download_pdf4(){
+					$.fileDownload('git/git.pdf');	
+						}*/					
+			function Download_pdf1(){
+					window.location = "download.php";	
+						}
+			/* Helper function */
+function download_file(fileURL, fileName) {
+    // for non-IE
+    if (!window.ActiveXObject) {
+        var save = document.createElement('a');
+        save.href = fileURL;
+        save.target = '_blank';
+        var filename = fileURL.substring(fileURL.lastIndexOf('/')+1);
+        save.download = fileName || filename;
+	       if ( navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/) && navigator.userAgent.search("Chrome") < 0) {
+				document.location = save.href; 
+// window event not working here
+			}else{
+		        var evt = new MouseEvent('click', {
+		            'view': window,
+		            'bubbles': true,
+		            'cancelable': false
+		        });
+		        save.dispatchEvent(evt);
+		        (window.URL || window.webkitURL).revokeObjectURL(save.href);
+			}	
+    }
+
+    // for IE < 11
+    else if ( !! window.ActiveXObject && document.execCommand)     {
+        var _window = window.open(fileURL, '_blank');
+        _window.document.close();
+        _window.document.execCommand('SaveAs', true, fileName || fileURL)
+        _window.close();
+    }
+}
+
+
+			function Download_pdf2(){
+					download_file ('/git/git.pdf', 'git.pdf');	
+						}	
+						function Download_pdf3(){
+					download_file ('http://localhost/git/git.pdf', 'git.pdf');	
+						}
+						
+
 			function Txt(usl,bgind)
 			{
-			alert("Txt6");
-			
-            var textarea=document.getElementById("text");
+			//alert("Txt2");
+			var textarea=document.getElementById("text");
             document.getElementById("text").focus();
             expressionText =  document.getElementById("text").value;
              document.getElementById("text").innerHTML = expressionText.replace(/\n/g, '<br>');
                 var selectionBegin = (textarea.selectionStart < textarea.selectionEnd) ? textarea.selectionStart : textarea.selectionEnd;
                 var selectionEnd = (textarea.selectionEnd > textarea.selectionStart) ? textarea.selectionEnd : textarea.selectionStart;
-                txtIndexes.push(new UsedSelection(selectionBegin,selectionEnd-selectionBegin));
+                txtIndexes.push(new UsedSelection(selectionBegin,selectionEnd-selectionBegin));                                                                                                                                                                                               
                 AggregateSelection(txtIndexes);
                 for (var i = 0; i < txtIndexes.length; i++){
                     var beginIndex = txtIndexes[i].startPosition;
@@ -3765,8 +3818,8 @@ redo = document.getElementById('redo');
             console.log(txtIndexes[i].startPosition + " " + txtIndexes[i].size);
 										usedLength=txtIndexes[i].size;
 			console.log( 'usedLength:' +usedLength );
-													}
-													usedLen=usedLength;
+													}                                
+													usedLen=usedLength;                                                              
                  var resultStr=makeString(expressionText,usedLength,beginIndex);
 
                 document.getElementById("RESULTTEXT").innerText=resultStr;
@@ -3805,7 +3858,7 @@ redo = document.getElementById('redo');
 															}
 	 
 		   
-												}
+											}
     $( document ).ready(function() {
     					
  //  11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 

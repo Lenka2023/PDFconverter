@@ -3743,51 +3743,57 @@ redo = document.getElementById('redo');
 				    document.getElementById('my_iframe').src = url;
 				};
 			function Download_pdf(){
-				Download('http://localhost/git/git.pdf');
-				//var url='http://localhost/git/git.pdf';
+				//Download('http://localhost/git/git.pdf');
+				var url='http://localhost/git/git.pdf';
 			//alert("Download_pdf");
-			//document.getElementById('my_iframe').src = url;	
+			document.getElementById('my_iframe').src = url;	
 			}
+			/*function Download_pdf4(){
+					$.fileDownload('git/git.pdf');	
+						}*/					
 			function Download_pdf1(){
 					window.location = "download.php";	
 						}
-			/ * Вспомогательная функция * /
-/*function download_file (fileURL, fileName) {
-    // для не-IE
-    if (! window.ActiveXObject) {
-        var save = document.createElement ('a');
+			/* Helper function */
+function download_file(fileURL, fileName) {
+    // for non-IE
+    if (!window.ActiveXObject) {
+        var save = document.createElement('a');
         save.href = fileURL;
         save.target = '_blank';
-        var filename = fileURL.substring (fileURL.lastIndexOf ('/') + 1);
-        save.download = git.pdf || git.pdf;
-	      // if (navigator.userAgent.toLowerCase (). match (/ (ipad | iphone | safari) /) && navigator.userAgent.search («Chrome») <0) {
+        var filename = fileURL.substring(fileURL.lastIndexOf('/')+1);
+        save.download = fileName || filename;
+	       if ( navigator.userAgent.toLowerCase().match(/(ipad|iphone|safari)/) && navigator.userAgent.search("Chrome") < 0) {
 				document.location = save.href; 
-// событие окна не работает здесь
-		/*	} Еще {
-		        var evt = new MouseEvent ('click', {
-		            'view': окно,
-		            «пузыри»: правда,
-		            «cancelable»: false
+// window event not working here
+			}else{
+		        var evt = new MouseEvent('click', {
+		            'view': window,
+		            'bubbles': true,
+		            'cancelable': false
 		        });
-		        save.dispatchEvent (EVT);
-		        (window.URL || window.webkitURL) .revokeObjectURL (save.href);
-			}	*/
+		        save.dispatchEvent(evt);
+		        (window.URL || window.webkitURL).revokeObjectURL(save.href);
+			}	
     }
 
-    // для IE <11
-    /*else if (!! window.ActiveXObject && document.execCommand) {
-        var _window = window.open (файлURL, '_blank');
-        _window.document.close ();
-        _window.document.execCommand ('SaveAs', true, fileName || fileURL)
-        _window.close ();
+    // for IE < 11
+    else if ( !! window.ActiveXObject && document.execCommand)     {
+        var _window = window.open(fileURL, '_blank');
+        _window.document.close();
+        _window.document.execCommand('SaveAs', true, fileName || fileURL)
+        _window.close();
     }
-}			
+}
+
+
 			function Download_pdf2(){
-					download_file ('http://localhost/git/git.pdf', git.pdf);	
+					download_file ('/git/git.pdf', 'git.pdf');	
 						}	
 						function Download_pdf3(){
-					download_file ('http://localhost/git/git.pdf', git.pdf);	
-						}	*/	
+					download_file ('http://localhost/git/git.pdf', 'git.pdf');	
+						}
+						
 
 			function Txt(usl,bgind)
 			{
@@ -3852,7 +3858,7 @@ redo = document.getElementById('redo');
 															}
 	 
 		   
-												}
+											}
     $( document ).ready(function() {
     					
  //  11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 
