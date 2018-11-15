@@ -3742,12 +3742,12 @@ redo = document.getElementById('redo');
 			function Download(url) {
 				    document.getElementById('my_iframe').src = url;
 				};
-			function Download_pdf(){
+			/*function Download_pdf(){
 				//Download('http://localhost/git/git.pdf');
 				var url='http://localhost/git/git.pdf';
 			//alert("Download_pdf");
 			document.getElementById('my_iframe').src = url;	
-			}
+			}*/
 			/*function Download_pdf4(){
 					$.fileDownload('git/git.pdf');	
 						}*/					
