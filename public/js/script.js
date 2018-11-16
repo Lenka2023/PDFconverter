@@ -3790,9 +3790,9 @@ function download_file(fileURL, fileName) {
 			function Download_pdf2(){
 					download_file ('/git/git.pdf', 'git.pdf');	
 						}	
-						function Download_pdf3(){
+						/*function Download_pdf3(){
 					download_file ('http://localhost/git/git.pdf', 'git.pdf');	
-						}
+						}*/
 						
 
 			function Txt(usl,bgind)

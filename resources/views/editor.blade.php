@@ -36,9 +36,9 @@
                                         <button onclick="Top()">TopPage</button>
                                         <button onclick="Down()">DownPage</button>
                                         <br>
-                                        <button onclick="Download_pdf3()">Download_pdf3</button>
+                                        <button onclick="Extract_text()">Extract_text</button>
+                                        <!--<button onclick="Download_pdf3()">Download_pdf3</button>-->
                                            <button onclick="Download_pdf2()">Download_pdf2</button>                               
-                                         <button onclick="Download_pdf1()">Download_pdf1</button>
 										<iframe id="my_iframe" style="display:none;"></iframe>
                                         <button onclick="Delete()">Delete</button>
                                         <button onclick="Redo()" id='redo' disabled>Redo</button>

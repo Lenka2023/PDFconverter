@@ -25,5 +25,7 @@
      <!--<script type="text/javascript" src="{{URL::asset('assets/js/script.js')}}"></script>-->
     <!--<script type="text/javascript" src="{{ URL::to('js/script.js') }}"></script>-->
     <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+<script src="https://mozilla.github.io/pdf.js/build/pdf.worker.js"></script>
     </body>
 </html>
