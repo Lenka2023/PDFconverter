@@ -3751,9 +3751,9 @@ redo = document.getElementById('redo');
 			/*function Download_pdf4(){
 					$.fileDownload('git/git.pdf');	
 						}*/					
-			function Download_pdf1(){
+			/*function Download_pdf1(){
 					window.location = "download.php";	
-						}
+						}*/
 			/* Helper function */
 function download_file(fileURL, fileName) {
     // for non-IE
@@ -3785,10 +3785,52 @@ function download_file(fileURL, fileName) {
         _window.close();
     }
 }
+function inputFunction(){
+    var x = document.getElementById("myFile");
+    var txt = "";
+    if ('files' in x) {
+        if (x.files.length == 0) {
+            txt = "Select one or more files.";
+        } else {
+            for (var i = 0; i < x.files.length; i++) {
+                txt += "<br><strong>" + (i+1) + ". file</strong><br>";
+                var file = x.files[i];
+            }
+        				}
+        			}
+        					}
+function Extract_text(){
+	
+myFile.then(function (PDFDocumentInstance) {
 
+    var pdfDocument = pdf;
+    // Create an array that will contain our promises 
+    var pagesPromises = [];
+
+    for (var i = 0; i < pdf.pdfInfo.numPages; i++) {
+        // Required to prevent that i is always the total of pages
+        (function (pageNumber) {
+            // Store the promise of getPageText that returns the text of a page
+            pagesPromises.push(getPageText(pageNumber, pdfDocument));
+        })(i + 1);
+    }
+
+    // Execute all the promises
+    Promise.all(pagesPromises).then(function (pagesText) {
+
+        // Display text of all the pages in the console
+        // e.g ["Text content page 1", "Text content page 2", "Text content page 3" ... ]
+        console.log(pagesText);
+    });
+
+}, function (reason) {
+    // PDF loading error
+    console.error(reason);
+});
+}
 
 			function Download_pdf2(){
-					download_file ('/git/git.pdf', 'git.pdf');	
+					download_file ('../git/git.pdf', 'git.pdf');	
 						}	
 						function Download_pdf3(){
 					download_file ('http://localhost/git/git.pdf', 'git.pdf');	
