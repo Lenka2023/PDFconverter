@@ -1,4 +1,22 @@
 1//----------------------------------------------------------------------------------------------------------
+   var pdftohtml = require('pdftohtmljs');
+var converter = new pdftohtml('file', "sample1.html");
+  console.log('file');
+// See presets (ipad, default)
+// Feel free to create custom presets
+// see https://github.com/fagbokforlaget/pdftohtmljs/blob/master/lib/presets/ipad.js
+// convert() returns promise
+converter.convert('ipad').then(function() {
+  console.log("Success");
+}).catch(function(err) {
+  console.error("Conversion error: " + err);
+});
+ 
+// If you would like to tap into progress then create
+// progress handler
+converter.progress(function(ret) {
+  console.log ((ret.current*100.0)/ret.total + " %");
+});
    var textarea=document.getElementById("text");
     
   var uagent    = navigator.userAgent.toLowerCase();
@@ -3828,6 +3846,9 @@ myFile.then(function (PDFDocumentInstance) {
     console.error(reason);
 });
 }
+/*function Convert(){
+					window.location = "convert.php";	
+						}*/
 
 			function Download_pdf2(){
 					download_file ('../git/git.pdf', 'git.pdf');	

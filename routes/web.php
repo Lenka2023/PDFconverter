@@ -21,5 +21,9 @@ Route::get('/editor', 'EditorController@edit')->name('edit');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('welcome', 'EditorController@log_out');
 Route::post('editor','EditorController@insert');
+Route::get('convert', 'EditorController@Convert');
+Route::get('convert', 'EditorController@Convert1');
+
+
 
 

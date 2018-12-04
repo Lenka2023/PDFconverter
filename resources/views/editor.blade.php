@@ -36,13 +36,13 @@
                                         <button onclick="Top()">TopPage</button>
                                         <button onclick="Down()">DownPage</button>
                                         <br>
+                                        <button onclick="Convert()">Convert</button>
                                         <button onclick="Extract_text()">Extract_text</button>
                                        <form action="/action_page.php">
 										  Select a file: <input type="file" id="myFile" onchange="inputFunction()"><br>
 										  <input type="submit">
 										</form>
-										   <button onclick="Download_pdf5()">Download_pdf5</button>
-                                           <button onclick="Download_pdf2()">Download_pdf2</button>                               
+										  <button onclick="Download_pdf2()">Download_pdf2</button>                               
 										<iframe id="my_iframe" style="display:none;"></iframe>
                                         <button onclick="Delete()">Delete</button>
                                         <button onclick="Redo()" id='redo' disabled>Redo</button>
