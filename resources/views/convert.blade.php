@@ -1,4 +1,1 @@
-@extends('layouts.header')
-@section('content')
-
-@stop 
+Hello {{data['name']}}

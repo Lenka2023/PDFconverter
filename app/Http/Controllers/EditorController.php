@@ -57,13 +57,5 @@ Storage::put( 'file1.txt','contents is written inside file.txt' );
 public function log_out(){
 	event.preventDefault();
 	}
-	public function Convert(){
-		$pdf = App::make('dompdf.wrapper');
-$pdf->loadHTML('<h1>Test</h1>');
-return $pdf->stream();
-	}
-	public function Convert1(){
-		$pdf = PDF::loadView('pdf.invoice', $data);
-return $pdf->download('invoice.pdf');
-	}
+	
 }
