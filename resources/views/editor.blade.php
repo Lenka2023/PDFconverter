@@ -36,7 +36,6 @@
                                         <button onclick="Top()">TopPage</button>
                                         <button onclick="Down()">DownPage</button>
                                         <br>
-                                        <button onclick="Convert()">Convert</button>
                                         <button onclick="Extract_text()">Extract_text</button>
                                        <form action="/action_page.php">
 										  Select a file: <input type="file" id="myFile" onchange="inputFunction()"><br>
@@ -52,7 +51,12 @@
                                     <span id="RESULTHTML" onkeypress="myFunction();" onclick="getCaretPosition()" onkeypress="ChangeSelection"></span>
                                    
                                     </div>
-									
+                                    <form action="convert" method="GET">
+									<button onclick="Convert()"> Convert</button>	
+									</form>
+									<form action="/convert" method="GET">
+									<button onclick="Convert1()"> Convert1</button>	
+									</form>
 									
 									<button onclick="Send_to_DB()"> Send_to_DB</button>
 									<form action="editor" method="POST">

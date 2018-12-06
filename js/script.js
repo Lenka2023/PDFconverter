@@ -1,5 +1,5 @@
 1//----------------------------------------------------------------------------------------------------------
-   var pdftohtml = require('pdftohtmljs');
+  /* var pdftohtml = require('pdftohtmljs');
 var converter = new pdftohtml('file', "sample1.html");
   console.log('file');
 // See presets (ipad, default)
@@ -16,7 +16,7 @@ converter.convert('ipad').then(function() {
 // progress handler
 converter.progress(function(ret) {
   console.log ((ret.current*100.0)/ret.total + " %");
-});
+});*/
    var textarea=document.getElementById("text");
     
   var uagent    = navigator.userAgent.toLowerCase();
