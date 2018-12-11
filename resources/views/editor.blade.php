@@ -51,10 +51,13 @@
                                     <span id="RESULTHTML" onkeypress="myFunction();" onclick="getCaretPosition()" onkeypress="ChangeSelection"></span>
                                    
                                     </div>
+                                     <form action="pdf" method="GET">
+									<button onclick="pdf()"> pdf</button>	
+									</form>
                                     <form action="convert" method="GET">
 									<button onclick="Convert()"> Convert</button>	
 									</form>
-									<form action="/convert" method="GET">
+									<form action="convert" method="GET">
 									<button onclick="Convert1()"> Convert1</button>	
 									</form>
 									
