@@ -21,8 +21,10 @@ Route::get('/editor', 'EditorController@edit')->name('edit');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('welcome', 'EditorController@log_out');
 Route::post('editor','EditorController@insert');
-
+Route::get('convert', 'PDFController@Convert');
 Route::get('convert', 'PDFController@Convert1');
-Route::get('/pdf', 'HomeController@pdf');
+//Route::get('/pdf', 'HomeController@pdf');
+Route::get('pdf', 'PDFController@pdf');
+Route::get('convert', 'PDFController@Convert2');
 
 

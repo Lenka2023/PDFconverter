@@ -58,6 +58,9 @@
 									<button onclick="Convert()"> Convert</button>	
 									</form>
 									<form action="convert" method="GET">
+									<button onclick="Convert2()"> Convert2</button>	
+									</form>
+									<form action="convert" method="GET">
 									<button onclick="Convert1()"> Convert1</button>	
 									</form>
 									
