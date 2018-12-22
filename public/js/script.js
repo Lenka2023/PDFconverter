@@ -1,4 +1,22 @@
 1//----------------------------------------------------------------------------------------------------------
+  /* var pdftohtml = require('pdftohtmljs');
+var converter = new pdftohtml('file', "sample1.html");
+  console.log('file');
+// See presets (ipad, default)
+// Feel free to create custom presets
+// see https://github.com/fagbokforlaget/pdftohtmljs/blob/master/lib/presets/ipad.js
+// convert() returns promise
+converter.convert('ipad').then(function() {
+  console.log("Success");
+}).catch(function(err) {
+  console.error("Conversion error: " + err);
+});
+ 
+// If you would like to tap into progress then create
+// progress handler
+converter.progress(function(ret) {
+  console.log ((ret.current*100.0)/ret.total + " %");
+});*/
    var textarea=document.getElementById("text");
     
   var uagent    = navigator.userAgent.toLowerCase();
@@ -3785,12 +3803,24 @@ function download_file(fileURL, fileName) {
         _window.close();
     }
 }
+function inputFunction(){
+    var x = document.getElementById("myFile");
+    var txt = "";
+    if ('files' in x) {
+        if (x.files.length == 0) {
+            txt = "Select one or more files.";
+        } else {
+            for (var i = 0; i < x.files.length; i++) {
+                txt += "<br><strong>" + (i+1) + ". file</strong><br>";
+                var file = x.files[i];
+            }
+        				}
+        			}
+        					}
+
 function Extract_text(){
-	var PDF_URL = '/git/git.pdf';
-	src="//mozilla.github.io/pdf.js/build/pdf.js"
-	var url = '//cdn.mozilla.net/pdfjs/tracemonkey.pdf';
-PDFJS.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
-PDFJS.getDocument(PDF_URL).then(function (PDFDocumentInstance) {
+	
+myFile.then(function (PDFDocumentInstance) {
 
     var pdfDocument = pdf;
     // Create an array that will contain our promises 
@@ -3817,6 +3847,13 @@ PDFJS.getDocument(PDF_URL).then(function (PDFDocumentInstance) {
     console.error(reason);
 });
 }
+
+function Convert_to_htm11(){
+					window.location = "converttohtml.php";	
+						}
+/*function Convert(){
+					window.location = "convert.php";	
+						}*/
 
 			function Download_pdf2(){
 					download_file ('../git/git.pdf', 'git.pdf');	

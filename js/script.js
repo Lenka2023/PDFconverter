@@ -3817,6 +3817,7 @@ function inputFunction(){
         				}
         			}
         					}
+
 function Extract_text(){
 	
 myFile.then(function (PDFDocumentInstance) {
@@ -3846,10 +3847,16 @@ myFile.then(function (PDFDocumentInstance) {
     console.error(reason);
 });
 }
+
+function Convert_to_htm11(){
+					window.location = "converttohtml.php";	
+						}
 /*function Convert(){
 					window.location = "convert.php";	
 						}*/
-
+function Convert_to_htm11(){
+					window.location = "converttohtml.php";	
+						}
 			function Download_pdf2(){
 					download_file ('../git/git.pdf', 'git.pdf');	
 						}	

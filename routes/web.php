@@ -27,4 +27,3 @@ Route::get('convert', 'PDFController@Convert1');
 Route::get('pdf', 'PDFController@pdf');
 Route::get('convert', 'PDFController@Convert2');
 
-

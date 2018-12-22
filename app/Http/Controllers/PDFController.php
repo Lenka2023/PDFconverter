@@ -5,7 +5,6 @@ use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Dompdf\Dompdf;
 
-   
 class PDFController extends Controller
 {
 public function Convert(){
@@ -35,5 +34,6 @@ $pdf->loadHTML($html);
 $pdf->render();
 $pdf->stream();
 }
+
 }
 
