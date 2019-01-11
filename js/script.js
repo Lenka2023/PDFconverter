@@ -3849,14 +3849,15 @@ myFile.then(function (PDFDocumentInstance) {
 }
 
 function Convert_to_htm11(){
+	alert(1);
+					//window.location = "../conv/converttohtml.php";
 					window.location = "converttohtml.php";	
+					//window.location = "download.php";	
 						}
 /*function Convert(){
 					window.location = "convert.php";	
 						}*/
-function Convert_to_htm11(){
-					window.location = "converttohtml.php";	
-						}
+
 			function Download_pdf2(){
 					download_file ('../git/git.pdf', 'git.pdf');	
 						}	
