@@ -3849,8 +3849,11 @@ myFile.then(function (PDFDocumentInstance) {
 }
 
 function Convert_to_htm11(){
-	alert(2);
-					window.location = "../conv/converttohtml.php";	
+	alert(1);
+					//window.location = "../conv/converttohtml.php";
+					//window.location = "../conv/converttohtml.php";
+					window.location = "../converttohtml.php";	
+					//window.location = "download.php";	
 						}
 /*function Convert(){
 					window.location = "convert.php";	

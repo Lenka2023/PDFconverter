@@ -52,10 +52,12 @@
                                     <span id="RESULTHTML" onkeypress="myFunction();" onclick="getCaretPosition()" onkeypress="ChangeSelection"></span>
                                    
                                     </div>
-                                     <form action="pdf" method="GET">
+                                     <!--<form action="pdf" method="GET">
 									<button onclick="pdf()"> pdf</button>	
+									</form>-->
+									<form action="/editor" method="GET">
+									<button onclick="Convert_to_htm12()"> Convert_to_htm12</button>	
 									</form>
-									
 
                                     <form action="convert" method="GET">
 									<button onclick="Convert()"> Convert</button>	
