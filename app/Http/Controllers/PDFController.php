@@ -5,6 +5,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Dompdf\Dompdf;
 use Gufy\PdfToHtml\Config;
+include '../vendor/autoload.php';
 class PDFController extends Controller
 {
 public function Convert(){
@@ -57,12 +58,12 @@ $pdf = new Gufy\PdfToHtml\Pdf($file);
 
 // convert to html and return it as [Dom Object](https://github.com/paquettg/php-html-parser)
 $html = $pdf->html();
-//echo $html;
+echo $html;
 // check if your pdf has more than one pages
-//$total_pages = $pdf->getPages();
-//var_dump($total_pages);
+$total_pages = $pdf->getPages();
+var_dump($total_pages);
 // Your pdf happen to have more than one pages and you want to go another page? Got it. use this command to change the current page to page 3
-//$html->goToPage(1);
+$html->goToPage(0);
 
 // and then you can do as you please with that dom, you can find any element you want
 //$paragraphs = $html->find('body > p');
