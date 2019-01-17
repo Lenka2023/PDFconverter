@@ -42,11 +42,11 @@ public function Convert_to_htm12(){
 
 // change pdfinfo bin location
 \Gufy\PdfToHtml\Config::set('pdfinfo.bin', 'D:/диск с/OSPanel/domains/myminilaravel.loc/poppler-0.68.0/bin/pdfinfo.exe');
-$file = dirname(__FILE__) . '/resources/git.pdf';
+//$file = dirname(__FILE__) . '/resources/git.pdf';
 //$file = dirname(__FILE__) . 'document.pdf';
 //$file = 'doc/document.pdf';
 //$file = '/resources/document.pdf';
-//$file = "document.pdf";
+$file = "document.pdf";
 //$file = dirname(__FILE__) . '/resources/git.pdf';
 //$file = dirname(__FILE__) . 'git.pdf';
 //$file = 'doc/git.pdf';
@@ -58,7 +58,7 @@ $pdf = new Gufy\PdfToHtml\Pdf($file);
 
 // convert to html and return it as [Dom Object](https://github.com/paquettg/php-html-parser)
 $html = $pdf->html();
-echo $html;
+echo $html;echo echo "<script>console.log( 'Debug Objects: " . $html . "' );</script>";
 // check if your pdf has more than one pages
 $total_pages = $pdf->getPages();
 var_dump($total_pages);
