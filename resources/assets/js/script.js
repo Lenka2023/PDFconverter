@@ -3816,7 +3816,9 @@ function inputFunction(){
             }
         				}
         			}
+        			var filePDF=file
         					}
+        					var PDFfile=filePDF;
 
 function Extract_text(){
 	
@@ -3852,7 +3854,7 @@ function Convert_to_htm11(){
 	alert(1);
 					//window.location = "../conv/converttohtml.php";
 					//window.location = "../conv/converttohtml.php";
-					window.location = "../converttohtml.php";	
+					window.location = "converttohtml.php";	
 					//window.location = "download.php";	
 						}
 /*function Convert(){

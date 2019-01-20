@@ -35,13 +35,15 @@
                                         <button onclick="Bold()">Bold</button>
                                         <button onclick="Top()">TopPage</button>
                                         <button onclick="Down()">DownPage</button>
+                                        <button onclick="Down()">DownPage</button>
+
                                         <br>
                                         <button onclick="Extract_text()">Extract_text</button>
-                                        <button onclick="Extract_text()">Extract_text</button>
-                                       <form action="/action_page.php">
-										  Select a file: <input type="file" id="myFile" onchange="inputFunction()"><br>
+                                        <button onclick="Replace_to_Server()">Replace_to_Server</button>
+                                       <!--<form action="/action_page.php" method="get">-->
+										  Select a file: <input type="file" name='file' id="myFile" onchange="inputFunction()"><br>
 										  <input type="submit">
-										</form>
+										 <!--</form>-->
 										  <button onclick="Convert_to_htm11()">Convert_to_htm11</button>                               
 										<iframe id="my_iframe" style="display:none;"></iframe>
                                         <button onclick="Delete()">Delete</button>
@@ -53,12 +55,19 @@
                                    
                                     </div>
                                     <?php
+                                    //$file1=$_GET['file'];
+                                    //$file1="<script> var file</script>";
+                                    //$file="<script type='text/javascript'>'var x=inputFunction()'</script>";
+                                    //$file1="<script type='text/javascript'>'PDFfile'</script>";
+                                    //$file1=$_GET['PDFfile'];
                                     $file =  "document.pdf";
+									echo "<script type='text/javascript'>'console.log(  inputFunction());'</script>";
+
                                     ?>
                                      <!--<form action="pdf" method="GET">
 									<button onclick="pdf()"> pdf</button>	
 									</form>-->
-									<form action="<?php echo $file;?>" method="GET">
+									<form action="file/file2.html" method="GET">
 									<button onclick="Convert_to_htm12()"> Convert_to_htm12</button>	
 									</form>
 

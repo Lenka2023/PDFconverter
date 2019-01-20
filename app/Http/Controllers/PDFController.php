@@ -46,19 +46,28 @@ public function Convert_to_htm12(){
 //$file = dirname(__FILE__) . 'document.pdf';
 //$file = 'doc/document.pdf';
 //$file = '/resources/document.pdf';
-$file = "document.pdf";
+ //"<script type='text/javascript'>'location.href = "http://localhost/myminilaravel2.loc/file=" + inputFunction();'</script>";
+//$file = "document.pdf";'</script>";
+echo "<script type='text/javascript'>'console.log(  inputFunction(););'</script>";
+$file = "<script type='text/javascript'>'inputFunction();'</script>";
 //$file = dirname(__FILE__) . '/resources/git.pdf';
 //$file = dirname(__FILE__) . 'git.pdf';
 //$file = 'doc/git.pdf';
 //$file = '/resources/git.pdf';
 //$file = "git.pdf";
+$file = "document.pdf";
 // initiate
 
 $pdf = new Gufy\PdfToHtml\Pdf($file);
 
 // convert to html and return it as [Dom Object](https://github.com/paquettg/php-html-parser)
 $html = $pdf->html();
-echo $html;echo echo "<script>console.log( 'Debug Objects: " . $html . "' );</script>";
+echo $html;
+//echo "<script>console.log( 'Debug Objects: " . $html . "' );</script>";
+echo "<script type='text/javascript'>'console.log(  '123456 ' );'</script>";
+echo "<script type='text/javascript'>'console.log(  filePDF);'</script>";
+echo "<script type='text/javascript'>'console.log(  '<?php echo $html?>' );'</script>";
+
 // check if your pdf has more than one pages
 $total_pages = $pdf->getPages();
 var_dump($total_pages);

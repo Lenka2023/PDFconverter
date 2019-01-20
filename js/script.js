@@ -3813,10 +3813,22 @@ function inputFunction(){
             for (var i = 0; i < x.files.length; i++) {
                 txt += "<br><strong>" + (i+1) + ". file</strong><br>";
                 var file = x.files[i];
+                //file.path;
+                //file.location;
+               // file.move("D:\диск с\OSPanel\domains\myminilaravel2.loc\gitNew");
             }
         				}
         			}
-        					}
+					return file;
+					}
+					
+        /*function Replace_to_Server(){
+        	//inputFunction().location;
+        	//inputFunction().copyFile('C:\folderA\myfile.txt', 'C:\folderB\myfile.txt', (err) => {
+  if (err) throw err;
+  console.log('File was copied to destination');
+});
+        }*/					 
 
 function Extract_text(){
 	
@@ -3860,7 +3872,8 @@ function Convert_to_htm11(){
 						}*/
 
 			function Download_pdf2(){
-					download_file ('../git/git.pdf', 'git.pdf');	
+					download_file ('../git/git.pdf', 'git.pdf');
+					
 						}	
 						function Download_pdf3(){
 					download_file ('http://localhost/git/git.pdf', 'git.pdf');	
@@ -3869,6 +3882,7 @@ function Convert_to_htm11(){
 
 			function Txt(usl,bgind)
 			{
+				
 			//alert("Txt2");
 			var textarea=document.getElementById("text");
             document.getElementById("text").focus();
