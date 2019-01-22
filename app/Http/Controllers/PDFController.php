@@ -5,7 +5,10 @@ use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Dompdf\Dompdf;
 use \Gufy\PdfToHtml\Config;
-include '../vendor/autoload.php';
+//use D\XAMPP\php\pear;
+//use D\диск с\OSPanel\modules\php\PHP-5.6;
+//use D\диск с\OSPanel\modules\php\PHP-5.6\PEAR\pear;
+require __DIR__ . '/vendor/autoload.php';
 class PDFController extends Controller
 {
 public function Convert(){
