@@ -1,7 +1,8 @@
 @extends('layouts.header')
+<script type="text/javascript" src=""></script>
 @section('content')
 
-    <body>
+
         <div class="page_cont one">
             <br class="cbt">
             <div class="edit_cont">
@@ -67,8 +68,11 @@
                                      <!--<form action="pdf" method="GET">
 									<button onclick="pdf()"> pdf</button>	
 									</form>-->
-									<form action="file/file2.html" method="GET">
-									<button onclick="Convert_to_htm12()"> Convert_to_htm12</button>	
+									<form action="file_to_pdf" method="GET">
+									 Select a file: <input type="file" name='file' id="myFile" onchange="inputFunction()"><br>
+									<button onclick="Convert_to_htm12()"> Convert_to_htm12</button>
+									<input type="submit">
+	
 									</form>
 
                                     <form action="convert" method="GET">
