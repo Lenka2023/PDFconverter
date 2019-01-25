@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 use Dompdf\Dompdf;
 use \Gufy\PdfToHtml\Config;
 //use D\XAMPP\php\pear;
-//use D\диск с\OSPanel\modules\php\PHP-5.6;
-//use D\диск с\OSPanel\modules\php\PHP-5.6\PEAR\pear;
-require __DIR__ . '/vendor/autoload.php';
+include '../vendor/autoload.php';
+//include '/vendor/autoload.php';
+//require __DIR__.'/../vendor/autoload.php';
+//require __DIR__.'/../vendor/autoload.php';
+
+//require __DIR__.'vendor.autoload.php';
+
+//require '../vendor.autoload.php';
+
 class PDFController extends Controller
 {
 public function Convert(){
