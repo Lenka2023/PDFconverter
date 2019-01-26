@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Dompdf\Dompdf;
-use \Gufy\PdfToHtml\Config;
+use \Gufy\PdfToHtml\Config ;
 //use D\XAMPP\php\pear;
-include '../vendor/autoload.php';
+include 'vendor/autoload.php';
 //include '/vendor/autoload.php';
 //require __DIR__.'/../vendor/autoload.php';
 //require __DIR__.'/../vendor/autoload.php';
@@ -46,7 +46,7 @@ $pdf->stream();
 }
 
 public function Convert_to_htm12(Request $request){
-$request->file;
+//$request->file;
 	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'D:/диск с/OSPanel/domains/myminilaravel.loc/poppler-0.68.0/bin/pdftohtml.exe');
 
 
@@ -55,7 +55,7 @@ $request->file;
 \Gufy\PdfToHtml\Config::set('pdfinfo.bin', 'D:/диск с/OSPanel/domains/myminilaravel.loc/poppler-0.68.0/bin/pdfinfo.exe');
 //$file = dirname(__FILE__) . '/resources/git.pdf';
 //$file = dirname(__FILE__) . 'document.pdf';
-// $file = 'doc/document.pdf';
+//$file = 'doc/document.pdf';
 //$file = '/resources/document.pdf';
  //"<script type='text/javascript'>'location.href = "http://localhost/myminilaravel2.loc/file=" + inputFunction();'</script>";
 //$file = "document.pdf";'</script>";
@@ -66,10 +66,10 @@ $request->file;
 //$file = 'doc/git.pdf';
 //$file = '/resources/git.pdf';
 //$file = "git.pdf";
- //$file = "document.pdf";
+ $file = "document.pdf";
 // initiate
 
- $pdf = new Gufy\PdfToHtml\Pdf($file);
+ $pdf = new \Gufy\PdfToHtml\Pdf($file);
 
 // convert to html and return it as [Dom Object](https://github.com/paquettg/php-html-parser)
 $html = $pdf->html();
