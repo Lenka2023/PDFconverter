@@ -65,8 +65,8 @@ public function Convert_to_htm12(Request $request){
 //$file = dirname(__FILE__) . 'git.pdf';
 //$file = 'doc/git.pdf';
 //$file = '/resources/git.pdf';
-//$file = "git.pdf";
- $file = "document.pdf";
+$file = "git.pdf";
+ //$file = "document.pdf";
 // initiate
 
  $pdf = new \Gufy\PdfToHtml\Pdf($file);
