@@ -61,7 +61,7 @@
                                     //$file="<script type='text/javascript'>'var x=inputFunction()'</script>";
                                     //$file1="<script type='text/javascript'>'PDFfile'</script>";
                                     //$file1=$_GET['PDFfile'];
-                                    $file =  "document.pdf";
+                                   // $file =  "document.pdf";
 									echo "<script type='text/javascript'>'console.log(  inputFunction());'</script>";
 
                                     ?>

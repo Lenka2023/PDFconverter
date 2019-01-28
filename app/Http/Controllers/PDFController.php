@@ -46,7 +46,7 @@ $pdf->stream();
 }
 
 public function Convert_to_htm12(Request $request){
-//$request->file;
+$file=$request->file;
 	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'D:/диск с/OSPanel/domains/myminilaravel.loc/poppler-0.68.0/bin/pdftohtml.exe');
 
 
@@ -65,7 +65,7 @@ public function Convert_to_htm12(Request $request){
 //$file = dirname(__FILE__) . 'git.pdf';
 //$file = 'doc/git.pdf';
 //$file = '/resources/git.pdf';
-$file = "git.pdf";
+//$file = "git.pdf";
  //$file = "document.pdf";
 // initiate
 

@@ -3814,13 +3814,11 @@ function inputFunction(){
             for (var i = 0; i < x.files.length; i++) {
                 txt += "<br><strong>" + (i+1) + ". file</strong><br>";
                 var file = x.files[i];
-                //file.path;
-                //file.location;
-               // file.move("D:\диск с\OSPanel\domains\myminilaravel2.loc\gitNew");
+                
             }
         				}
         			}
-					return file;
+					
 					}
 					
         /*function Replace_to_Server(){
