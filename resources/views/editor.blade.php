@@ -80,11 +80,11 @@
 									<button onclick="Convert_to_htm12()"> Convert_to_htm12</button>
 									<input type="submit">
 	
-									</form>
+									<!--</form>
 									<form action="uploadfile" method="GET">
 									<button onclick="uploadFile()"> uploadFile</button>
 									
-									</form>
+									</form>-->
                                     <form action="convert" method="GET">
 									<button onclick="Convert()"> Convert</button>	
 									</form>

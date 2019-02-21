@@ -25,15 +25,15 @@ class EditorController extends Controller
 
         	
     }	
-    public function uploadFile()
+   /* public function uploadFile()
    { 
    /*echo Form::open(array('url' => '/uploadfile','files'=>'true'));
          echo 'Select the file to upload.';
          echo Form::file('image');
          echo Form::submit('Upload File');
-         echo Form::close();*/
+         echo Form::close();
         return view('uploadfile');  
-}   
+} */  
  public function showUploadFile(Request $request) {
       $file = $request->file('image');
    
