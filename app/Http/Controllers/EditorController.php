@@ -25,8 +25,41 @@ class EditorController extends Controller
 
         	
     }	
-       
-    
+    public function uploadFile()
+   { 
+   /*echo Form::open(array('url' => '/uploadfile','files'=>'true'));
+         echo 'Select the file to upload.';
+         echo Form::file('image');
+         echo Form::submit('Upload File');
+         echo Form::close();*/
+        return view('uploadfile');  
+}   
+ public function showUploadFile(Request $request) {
+      $file = $request->file('image');
+   
+      //Display File Name
+      echo 'File Name: '.$file->getClientOriginalName();
+      echo '<br>';
+   
+      //Display File Extension
+      echo 'File Extension: '.$file->getClientOriginalExtension();
+      echo '<br>';
+   
+      //Display File Real Path
+      echo 'File Real Path: '.$file->getRealPath();
+      echo '<br>';
+   
+      //Display File Size
+      echo 'File Size: '.$file->getSize();
+      echo '<br>';
+   
+      //Display File Mime Type
+      echo 'File Mime Type: '.$file->getMimeType();
+   
+      //Move Uploaded File
+      $destinationPath = 'uploads';
+      $file->move($destinationPath,$file->getClientOriginalName());
+   }   
 	public function insert(Request $request){
 $text = $request->input('page');
 DB::insert('insert into pages (text) values(?)',[$text]);

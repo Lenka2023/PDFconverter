@@ -74,7 +74,10 @@
 									<input type="submit">
 	
 									</form>
-
+									<form action="uploadfile" method="GET">
+									<button onclick="uploadFile()"> uploadFile</button>
+									
+									</form>
                                     <form action="convert" method="GET">
 									<button onclick="Convert()"> Convert</button>	
 									</form>
