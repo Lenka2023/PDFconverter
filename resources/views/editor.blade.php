@@ -55,6 +55,13 @@
                                     <span id="RESULTHTML" onkeypress="myFunction();" onclick="getCaretPosition()" onkeypress="ChangeSelection"></span>
                                    
                                     </div>
+                                     <?php
+								         echo Form::open(array('url' => '/uploadfile','files'=>'true'));
+								         echo 'Select the file to upload.';
+								         echo Form::file('image');
+								         echo Form::submit('Upload File');
+								         echo Form::close();
+								      ?>
                                     <?php
                                     //$file1=$_GET['file'];
                                     //$file1="<script> var file</script>";
