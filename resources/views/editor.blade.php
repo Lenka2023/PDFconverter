@@ -56,11 +56,11 @@
                                    
                                     </div>
                                      <?php
-								         echo Form::open(array('url' => '/uploadfile','files'=>'true'));
+								         /*echo Form::open(array('url' => '/editor','files'=>'true'));
 								         echo 'Select the file to upload.';
 								         echo Form::file('image');
 								         echo Form::submit('Upload File');
-								         echo Form::close();
+								         echo Form::close();*/
 								      ?>
                                     <?php
                                     //$file1=$_GET['file'];
@@ -75,6 +75,11 @@
                                      <!--<form action="pdf" method="GET">
 									<button onclick="pdf()"> pdf</button>	
 									</form>-->
+									 <form action="editor" id="contact_img" enctype="multipart/form-data"  method="post">
+	      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+	     <input type="file" name="pic">
+	     <input type="submit">
+	    </form>
 									<form action="file_to_pdf" method="GET">
 									 Select a file: <input type="file" name='file' id="myFile" onchange="inputFunction()"><br>
 									<button onclick="Convert_to_htm12()"> Convert_to_htm12</button>

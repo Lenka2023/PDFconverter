@@ -30,3 +30,6 @@ Route::get('/file_to_pdf', 'PDFController@Convert_to_htm12');
 //Route::get('/uploadfile','UploadFileController@index');
 //Route::post('/uploadfile','UploadFileController@showUploadFile');
 //Route::get('editor','EditorController@uploadFile');
+//Route::get('/editor','EditorController@edit');
+//Route::post('/editor','EditorController@showUploadFile');
+Route::get('editor', 'PDFController@myfunc');

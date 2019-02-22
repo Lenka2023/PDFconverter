@@ -25,16 +25,25 @@ class EditorController extends Controller
 
         	
     }	
-   /* public function uploadFile()
+    public function myfunc(Request $request) {
+        if($request->hasFile('pic')){
+            // never get this
+        }
+    /*public function uploadFile(Request $form){
+    if ($form->hasFile('contact_image')){
+        echo $form->file('contact_image');
+
+    }else{
+        echo "empty";
+    }
+    echo $form->testtest;
+  }*/
+    /*public function uploadFile()
    { 
-   /*echo Form::open(array('url' => '/uploadfile','files'=>'true'));
-         echo 'Select the file to upload.';
-         echo Form::file('image');
-         echo Form::submit('Upload File');
-         echo Form::close();
+   
         return view('uploadfile');  
-} */  
- public function showUploadFile(Request $request) {
+} */ 
+ /*public function showUploadFile(Request $request) {
       $file = $request->file('image');
    
       //Display File Name
@@ -59,7 +68,7 @@ class EditorController extends Controller
       //Move Uploaded File
       $destinationPath = 'uploads';
       $file->move($destinationPath,$file->getClientOriginalName());
-   }   
+   }  */ 
 	public function insert(Request $request){
 $text = $request->input('page');
 DB::insert('insert into pages (text) values(?)',[$text]);
