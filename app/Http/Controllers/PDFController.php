@@ -76,8 +76,8 @@ public function index()
       if (!$file->isValid()) {
     throw new \Exception('Error on upload file: '.$file->getErrorMessage());
 }
-   //dd($file);
-    //echo $file;
+   dd($file);
+    echo $file;
       //Display File Name
       echo 'File Name: '.$file->getClientOriginalName();
       echo '<br>';
