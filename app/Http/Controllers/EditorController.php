@@ -29,6 +29,7 @@ class EditorController extends Controller
         if($request->hasFile('pic')){
             // never get this
         }
+      }
     /*public function uploadFile(Request $form){
     if ($form->hasFile('contact_image')){
         echo $form->file('contact_image');
