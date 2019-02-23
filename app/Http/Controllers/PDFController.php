@@ -44,9 +44,62 @@ $pdf->loadHTML($html);
 $pdf->render();
 $pdf->stream();
 }
+public function myfunc(Request $request) {
+        if($request->hasFile('pic')){
+            // never get this
+            $file=$request->file('pic');
+            dd($file);
+        }else{
+        echo "empty1";
+      }
+  }
+    public function uploadFile(Request $form){
+    if ($form->hasFile('pic')){
+        echo $form->file('pic');
 
+    }else{
+        echo "empty";
+    }
+    echo $form->testtest;
+  }
+    /*public function uploadFile()
+   { 
+   
+        return view('uploadfile');  
+} */ 
+public function index()
+   {   
+    return view('editor');
+    }
+ public function showUploadFile(Request $request) {
+      $file = $request->file('pic');
+   dd($file);
+    //echo $file;
+      //Display File Name
+      echo 'File Name: '.$file->getClientOriginalName();
+      echo '<br>';
+   
+      //Display File Extension
+      echo 'File Extension: '.$file->getClientOriginalExtension();
+      echo '<br>';
+   
+      //Display File Real Path
+      echo 'File Real Path: '.$file->getRealPath();
+      echo '<br>';
+   
+      //Display File Size
+      echo 'File Size: '.$file->getSize();
+      echo '<br>';
+   
+      //Display File Mime Type
+      echo 'File Mime Type: '.$file->getMimeType();
+   
+      //Move Uploaded File
+      $destinationPath = 'uploads';
+      $file->move($destinationPath,$file->getClientOriginalName());
+   }  
 public function Convert_to_htm12(Request $request){
-$file=$request->file;
+$file=$request->file('pic');
 	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'D:/диск с/OSPanel/domains/myminilaravel.loc/poppler-0.68.0/bin/pdftohtml.exe');
 
 

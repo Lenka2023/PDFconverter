@@ -25,51 +25,7 @@ class EditorController extends Controller
 
         	
     }	
-    public function myfunc(Request $request) {
-        if($request->hasFile('pic')){
-            // never get this
-        }
-      }
-    /*public function uploadFile(Request $form){
-    if ($form->hasFile('contact_image')){
-        echo $form->file('contact_image');
-
-    }else{
-        echo "empty";
-    }
-    echo $form->testtest;
-  }*/
-    /*public function uploadFile()
-   { 
-   
-        return view('uploadfile');  
-} */ 
- /*public function showUploadFile(Request $request) {
-      $file = $request->file('image');
-   
-      //Display File Name
-      echo 'File Name: '.$file->getClientOriginalName();
-      echo '<br>';
-   
-      //Display File Extension
-      echo 'File Extension: '.$file->getClientOriginalExtension();
-      echo '<br>';
-   
-      //Display File Real Path
-      echo 'File Real Path: '.$file->getRealPath();
-      echo '<br>';
-   
-      //Display File Size
-      echo 'File Size: '.$file->getSize();
-      echo '<br>';
-   
-      //Display File Mime Type
-      echo 'File Mime Type: '.$file->getMimeType();
-   
-      //Move Uploaded File
-      $destinationPath = 'uploads';
-      $file->move($destinationPath,$file->getClientOriginalName());
-   }  */ 
+    
 	public function insert(Request $request){
 $text = $request->input('page');
 DB::insert('insert into pages (text) values(?)',[$text]);

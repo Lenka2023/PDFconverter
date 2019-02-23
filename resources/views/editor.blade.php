@@ -75,14 +75,20 @@
                                      <!--<form action="pdf" method="GET">
 									<button onclick="pdf()"> pdf</button>	
 									</form>-->
-									 <form action="editor" id="contact_img" enctype="multipart/form-data"  method="post">
-	      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-	     <input type="file" name="pic">
-	     <input type="submit">
-	    </form>
+									 <form action="editor" id="contact_file" enctype="multipart/form-data"  method="post">
+	                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+	                                 <input type="file" name="pic">
+
+	                                 <input type="submit">
+	                                 <button onclick="Convert_to_htm12()"> Convert_to_htm12</button>
+	                                 </form>
+
+
+
+	                                 
 									<form action="file_to_pdf" method="GET">
 									 Select a file: <input type="file" name='file' id="myFile" onchange="inputFunction()"><br>
-									<button onclick="Convert_to_htm12()"> Convert_to_htm12</button>
+									
 									<input type="submit">
 	
 									<!--</form>
