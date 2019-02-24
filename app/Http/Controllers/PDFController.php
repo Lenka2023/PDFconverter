@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Dompdf\Dompdf;
 use \Gufy\PdfToHtml\Config ;
 //use D\XAMPP\php\pear;
@@ -73,6 +74,8 @@ public function index()
     }
  public function showUploadFile(Request $request) {
       $file = $request->file('pic');
+		//$request->file('pic')->storeAs('public',$file);
+      Storage::putFile('public/new',$file);
       if (!$file->isValid()) {
     throw new \Exception('Error on upload file: '.$file->getErrorMessage());
 }
@@ -99,8 +102,20 @@ public function index()
    
       //Move Uploaded File
       $destinationPath = 'uploads';
-      $file->move($destinationPath,$file->getClientOriginalName());
-   }  
+     //$file->move($destinationPath,$file->getClientOriginalName());
+     $url= Storage::url($file);
+     "<img src='".$url."'/>";	
+     } 	
+    
+    public function store(Request $request) { 
+$file=$request->file('pic');
+return Storage::putFile('public/new',$file);
+    }
+     public function show (Request $request){
+     	$file=$request->file('pic');
+     $url= Storage::url($file);
+     return "< src='".$url."'/>";	
+     }
 public function Convert_to_htm12(Request $request){
 $file=$request->file('pic');
 	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'D:/диск с/OSPanel/domains/myminilaravel.loc/poppler-0.68.0/bin/pdftohtml.exe');
