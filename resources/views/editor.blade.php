@@ -83,7 +83,7 @@
 	                               <button onclick="Convert_to_htm12()"> Convert_to_htm12</button>
 	                               <button onclick="store()"> store</button>
 	                               <button onclick="show()"> show</button>
-
+									<button onclick="showUploadFile()"> showUploadFile</button>
 	                                 </form>
 
 

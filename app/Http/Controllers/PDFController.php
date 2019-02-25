@@ -74,13 +74,16 @@ public function index()
     }
  public function showUploadFile(Request $request) {
       $file = $request->file('pic');
+      //readfile($file);
 		//$request->file('pic')->storeAs('public',$file);
-      Storage::putFile('public/new',$file);
-      if (!$file->isValid()) {
+      //Storage::putFile('public/new',$file);
+     /* if (!$file->isValid()) {
     throw new \Exception('Error on upload file: '.$file->getErrorMessage());
 }
+      "<script>'download_file ('../uploads', $file); '</script>"*/
+
    dd($file);
-    echo $file;
+    //echo $file;
       //Display File Name
       echo 'File Name: '.$file->getClientOriginalName();
       echo '<br>';
@@ -101,21 +104,23 @@ public function index()
       echo 'File Mime Type: '.$file->getMimeType();
    
       //Move Uploaded File
-      $destinationPath = 'uploads';
+      //$destinationPath = 'uploads';
      //$file->move($destinationPath,$file->getClientOriginalName());
      $url= Storage::url($file);
-     "<img src='".$url."'/>";	
+     dd($url);
+     //"<img src='".$url."'/>";	*/
      } 	
     
-    public function store(Request $request) { 
+    /*public function store(Request $request) { 
 $file=$request->file('pic');
 return Storage::putFile('public/new',$file);
     }
      public function show (Request $request){
      	$file=$request->file('pic');
-     $url= Storage::url($file);
-     return "< src='".$url."'/>";	
-     }
+    // $url= Storage::url($file);
+     // $url= "../uploads";
+     //return "< src='$url'/>";	
+     }*/
 public function Convert_to_htm12(Request $request){
 $file=$request->file('pic');
 	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'D:/диск с/OSPanel/domains/myminilaravel.loc/poppler-0.68.0/bin/pdftohtml.exe');
