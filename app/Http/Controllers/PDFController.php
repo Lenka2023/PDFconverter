@@ -160,11 +160,11 @@ $html = $pdf->html();
  var_dump($total_pages);
 // Your pdf happen to have more than one pages and you want to go another page? Got it. use this command to change the current page to page 3
 // $html->goToPage(0);*/
-$abc=1256554478999555655698;
+$abc='1256554478999555655698';
 
 // and then you can do as you please with that dom, you can find any element you want
 //$paragraphs = $html->find('body > p');
-return view('show_html');
+return view('show_html',compact('abc'));
 
 }
 }

@@ -2,8 +2,8 @@
 <script type="text/javascript" src=""></script>
 @section('content')
 <div class="middle">
-				
-{{$abc}}										
+<div>{{ $abc }}</div>				
+										
 </div>
     
 @stop 
