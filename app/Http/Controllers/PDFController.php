@@ -72,8 +72,8 @@ public function index()
    {   
     return view('editor');
     }
- public function showUploadFile(Request $request) {
-      $file = $request->file('pic');
+ /*public function showUploadFile(Request $request) {
+      $file = $request->file();
       //readfile($file);
 		//$request->file('pic')->storeAs('public',$file);
       //Storage::putFile('public/new',$file);
@@ -82,10 +82,10 @@ public function index()
 }
       "<script>'download_file ('../uploads', $file); '</script>"*/
 
-   dd($file);
+   //dd($file);
     //echo $file;
       //Display File Name
-      echo 'File Name: '.$file->getClientOriginalName();
+      /*echo 'File Name: '.$file->getClientOriginalName();
       echo '<br>';
    
       //Display File Extension
@@ -101,15 +101,15 @@ public function index()
       echo '<br>';
    
       //Display File Mime Type
-      echo 'File Mime Type: '.$file->getMimeType();
+      echo 'File Mime Type: '.$file->getMimeType();*/
    
       //Move Uploaded File
       //$destinationPath = 'uploads';
      //$file->move($destinationPath,$file->getClientOriginalName());
-     $url= Storage::url($file);
+    /* $url= Storage::url($file);
      dd($url);
-     //"<img src='".$url."'/>";	*/
-     } 	
+     //"<img src='".$url."'/>";	
+     } 	*/
     
     /*public function store(Request $request) { 
 $file=$request->file('pic');
@@ -122,13 +122,14 @@ return Storage::putFile('public/new',$file);
      //return "< src='$url'/>";	
      }*/
 public function Convert_to_htm12(Request $request){
+  //dd('convert');
 $file=$request->file('pic');
-	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'D:/диск с/OSPanel/domains/myminilaravel.loc/poppler-0.68.0/bin/pdftohtml.exe');
+	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'D:\xampp\htdocs\myminilaravel.loc\poppler-0.68.0/bin/pdftohtml.exe');
 
 
 
 // change pdfinfo bin location
-\Gufy\PdfToHtml\Config::set('pdfinfo.bin', 'D:/диск с/OSPanel/domains/myminilaravel.loc/poppler-0.68.0/bin/pdfinfo.exe');
+\Gufy\PdfToHtml\Config::set('pdfinfo.bin', 'D:\xampp\htdocs\myminilaravel.loc\poppler-0.68.0/bin/pdfinfo.exe');
 //$file = dirname(__FILE__) . '/resources/git.pdf';
 //$file = dirname(__FILE__) . 'document.pdf';
 //$file = 'doc/document.pdf';
@@ -150,6 +151,7 @@ $file=$request->file('pic');
 // convert to html and return it as [Dom Object](https://github.com/paquettg/php-html-parser)
 $html = $pdf->html();
  echo $html;
+ dd($html);
 //echo "<script>console.log( 'Debug Objects: " . $html . "' );</script>";
 // echo "<script type='text/javascript'>'console.log(  '123456 ' );'</script>";
 

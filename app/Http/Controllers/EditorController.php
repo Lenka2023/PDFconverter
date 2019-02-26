@@ -25,6 +25,7 @@ class EditorController extends Controller
 
         	
     }	
+       
     
 	public function insert(Request $request){
 $text = $request->input('page');
