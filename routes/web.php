@@ -35,4 +35,4 @@ Route::post('editor', 'PDFController@Convert_to_htm12');
 Route::get('editor', 'PDFController@index');
 //Route::post('editor', 'PDFController@showUploadFile');
 //Route::post('editor', 'PDFController@store');
-//
+//Route::get('show_html', 'PDFController@Convert_to_htm12');

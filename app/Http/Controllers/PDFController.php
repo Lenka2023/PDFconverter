@@ -123,8 +123,7 @@ return Storage::putFile('public/new',$file);
      }*/
 public function Convert_to_htm12(Request $request){
   //dd('convert');
-$file=$request->file('pic');
-	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'D:\xampp\htdocs\myminilaravel.loc\poppler-0.68.0/bin/pdftohtml.exe');
+/*	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'D:\xampp\htdocs\myminilaravel.loc\poppler-0.68.0/bin/pdftohtml.exe');
 
 
 
@@ -160,11 +159,14 @@ $html = $pdf->html();
  $total_pages = $pdf->getPages();
  var_dump($total_pages);
 // Your pdf happen to have more than one pages and you want to go another page? Got it. use this command to change the current page to page 3
-// $html->goToPage(0);
+// $html->goToPage(0);*/
+$abc=1256554478999555655698;
 
 // and then you can do as you please with that dom, you can find any element you want
 //$paragraphs = $html->find('body > p');
+return view('show_html');
 
 }
 }
+
 
