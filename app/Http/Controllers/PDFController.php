@@ -73,11 +73,11 @@ public function index()
     return view('editor');
     }
  /*public function showUploadFile(Request $request) {
-      $file = $request->file();
+      $file[] = $request->file();
       //readfile($file);
 		//$request->file('pic')->storeAs('public',$file);
       //Storage::putFile('public/new',$file);
-     /* if (!$file->isValid()) {
+     /*if (!$file->isValid()) {
     throw new \Exception('Error on upload file: '.$file->getErrorMessage());
 }
       "<script>'download_file ('../uploads', $file); '</script>"*/
@@ -85,11 +85,14 @@ public function index()
    //dd($file);
     //echo $file;
       //Display File Name
-      /*echo 'File Name: '.$file->getClientOriginalName();
+   /*for($i = 0; $i <10; $i++) {
+   
+
+     echo 'File Name: '.$file->getClientOriginalName();
       echo '<br>';
    
       //Display File Extension
-      echo 'File Extension: '.$file->getClientOriginalExtension();
+      //echo 'File Extension: '.$file->getClientOriginalExtension();
       echo '<br>';
    
       //Display File Real Path
@@ -101,17 +104,17 @@ public function index()
       echo '<br>';
    
       //Display File Mime Type
-      echo 'File Mime Type: '.$file->getMimeType();*/
-   
+      echo 'File Mime Type: '.$file->getMimeType();
+   }
       //Move Uploaded File
       //$destinationPath = 'uploads';
      //$file->move($destinationPath,$file->getClientOriginalName());
-    /* $url= Storage::url($file);
+    $url= Storage::url($file);
      dd($url);
      //"<img src='".$url."'/>";	
      } 	*/
     
-    /*public function store(Request $request) { 
+   /* public function store(Request $request) { 
 $file=$request->file('pic');
 return Storage::putFile('public/new',$file);
     }
@@ -123,17 +126,18 @@ return Storage::putFile('public/new',$file);
      }*/
 public function Convert_to_htm12(Request $request){
   //dd('convert');
-  $file=$request->file('pic');
+   $file[]=$request->file('pic');
+  //$filehtml=implode('',$file);
 
-	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'D:\xampp\htdocs\myminilaravel.loc\poppler-0.68.0/bin/pdftohtml.exe');
+	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', '/poppler-0.68.0\bin\pdftohtml.exe');
 
 
 
 // change pdfinfo bin location
-\Gufy\PdfToHtml\Config::set('pdfinfo.bin', 'D:\xampp\htdocs\myminilaravel.loc\poppler-0.68.0/bin/pdfinfo.exe');
+\Gufy\PdfToHtml\Config::set('pdfinfo.bin', '/poppler-0.68.0\bin\pdfinfo.exe');
 //$file = dirname(__FILE__) . '/resources/git.pdf';
 //$file = dirname(__FILE__) . 'document.pdf';
-//$file = 'doc/document.pdf';
+//$file = '../doc/document.pdf';
 //$file = '/resources/document.pdf';
  //"<script type='text/javascript'>'location.href = "http://localhost/myminilaravel2.loc/file=" + inputFunction();'</script>";
 //$file = "document.pdf";'</script>";
@@ -150,23 +154,24 @@ public function Convert_to_htm12(Request $request){
  $pdf = new \Gufy\PdfToHtml\Pdf($file);
 
 // convert to html and return it as [Dom Object](https://github.com/paquettg/php-html-parser)
-$html = $pdf->html();
- echo $html;
- dd($html);
+$html[] =$pdf->html();
+$htmlstr=implode('',$html);
+//echo $html;
+ //dd($html);
 //echo "<script>console.log( 'Debug Objects: " . $html . "' );</script>";
 // echo "<script type='text/javascript'>'console.log(  '123456 ' );'</script>";
 
 
 // check if your pdf has more than one pages
- $total_pages = $pdf->getPages();
- var_dump($total_pages);
+ //$total_pages = $pdf->getPages();
+ //dd($total_pages);
 // Your pdf happen to have more than one pages and you want to go another page? Got it. use this command to change the current page to page 3
 // $html->goToPage(0);*/
 //$abc='1256554478999555655698';
 
 // and then you can do as you please with that dom, you can find any element you want
 //$paragraphs = $html->find('body > p');
-return view('show_html',compact('html'));
+return view('show_html',compact('htmlstr'));
 
 }
 }

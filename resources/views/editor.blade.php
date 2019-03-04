@@ -76,14 +76,15 @@
 									<button onclick="pdf()"> pdf</button>	
 									</form>-->
 									 <form action="editor" id="contact_file" enctype="multipart/form-data"  method="post">
+									 	 {{!! csrf_field() !!}}
 	                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 	                                 <input type="file" name="pic">
 
 	                                  <!-- <input type="submit">-->
-	                               <button onclick="Convert_to_htm12()"> Convert_to_htm12</button>
-	                               <button onclick="store()"> store</button>
-	                               <button onclick="show()"> show</button>
-									<button onclick="showUploadFile()"> showUploadFile</button>
+	                               <button > Convert_to_htm12</button>
+	                               <button > store</button>
+	                               <button > show</button>
+									<button > showUploadFile</button>
 	                                 </form>
 
 
