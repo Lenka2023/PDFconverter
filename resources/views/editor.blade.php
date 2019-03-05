@@ -76,7 +76,7 @@
 									<button onclick="pdf()"> pdf</button>	
 									</form>-->
 									 <form action="editor" id="contact_file" enctype="multipart/form-data"  method="post">
-									 	 {{!! csrf_field() !!}}
+									 	 {{ csrf_field() }}
 	                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 	                                 <input type="file" name="pic">
 

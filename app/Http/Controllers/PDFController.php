@@ -21,10 +21,10 @@ class PDFController extends Controller
 public function Convert(){
 	$pdf = new Dompdf();
 		//$pdf = App::make('dompdf.wrapper');
-$pdf->loadHTML('<h1>Test</h1>');
+$pdf->loadHTML('<body bgcolor="#A0A0A0" vlink="blue" link="blue"> <div id="page1-div" style="position:relative;width:918px;height:1188px;"> <img width="918" height="1188" src="src/../output/5c7e53d5bdb83/document001.png" alt="background image"> <p style="position:absolute;top:85px;left:51px;white-space:nowrap" class="ft00"><b>Test</b></p> </div> </body>');
 //$pdf->render();
 //$pdf->stream();
-return $pdf->stream('review.pdf');
+return $pdf->render('review.pdf');
 	}
 	public function Convert1(){
 		$data=['name'=>'Sarthak'];
@@ -126,18 +126,15 @@ return Storage::putFile('public/new',$file);
      }*/
 public function Convert_to_htm12(Request $request){
   //dd('convert');
-   $file[]=$request->file('pic');
-  //$filehtml=implode('',$file);
+  $pdf = new Dompdf();
+  $pdf->loadHTML('<h1>Test</h1>');
+  $file[]=$pdf->render('review.pdf');
+ 	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'C:\poppler-0.68.0\bin/pdftohtml.exe');
 
-	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', '/poppler-0.68.0\bin\pdftohtml.exe');
-
-
-
-// change pdfinfo bin location
-\Gufy\PdfToHtml\Config::set('pdfinfo.bin', '/poppler-0.68.0\bin\pdfinfo.exe');
+\Gufy\PdfToHtml\Config::set('pdfinfo.bin', 'C:\poppler-0.68.0\bin/pdfinfo.exe');
 //$file = dirname(__FILE__) . '/resources/git.pdf';
 //$file = dirname(__FILE__) . 'document.pdf';
-//$file = '../doc/document.pdf';
+//$file = 'doc/document.pdf';
 //$file = '/resources/document.pdf';
  //"<script type='text/javascript'>'location.href = "http://localhost/myminilaravel2.loc/file=" + inputFunction();'</script>";
 //$file = "document.pdf";'</script>";
@@ -149,29 +146,49 @@ public function Convert_to_htm12(Request $request){
 //$file = '/resources/git.pdf';
 //$file = "git.pdf";
  //$file = "document.pdf";
-// initiate
-
- $pdf = new \Gufy\PdfToHtml\Pdf($file);
-
+ $file=($request->file('pic'));
+  //$file[]='D:\XAMPP\htdocs\myminilaravel5.loc\doc/document.pdf';
+//dd($file);
+ $pdf = new \Gufy\PdfToHtml\Pdf('C:\document.pdf');
+ $pdfDom = $pdf->getDom(['ignoreImages' => true]);
+ //dd($pdfDom);
+ //$pdfDom =$file->getDom();
+  dd($pdfDom);
+ //dd($pdf);
+//$pdfInfo = $pdf->getInfo();
+//dd($pdfInfo);
+//$countPages = $pdf->countPages();
+//dd($countPages);
+//dd($contentFirstPage);
+//$total_pages = $pdf->getPages(0);
+//dd($total_pages);
+/*foreach ($pdf->getHtml()->getAllPages() as $page) {
+    echo $page . '<br/>';
+  }*/
 // convert to html and return it as [Dom Object](https://github.com/paquettg/php-html-parser)
-$html[] =$pdf->html();
-$htmlstr=implode('',$html);
+//$html =$pdf->html();
+//$htmlstr=implode('',$html);
 //echo $html;
  //dd($html);
 //echo "<script>console.log( 'Debug Objects: " . $html . "' );</script>";
 // echo "<script type='text/javascript'>'console.log(  '123456 ' );'</script>";
 
 
+
+
 // check if your pdf has more than one pages
- //$total_pages = $pdf->getPages();
- //dd($total_pages);
+ 
+ 
+ 
+ 
+ 
 // Your pdf happen to have more than one pages and you want to go another page? Got it. use this command to change the current page to page 3
-// $html->goToPage(0);*/
+//$html->goToPage(0);
 //$abc='1256554478999555655698';
 
 // and then you can do as you please with that dom, you can find any element you want
 //$paragraphs = $html->find('body > p');
-return view('show_html',compact('htmlstr'));
+//return view('show_html',compact('htmlstr'));
 
 }
 }
