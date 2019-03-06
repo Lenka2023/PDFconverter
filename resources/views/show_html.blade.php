@@ -1,5 +1,5 @@
 
-{{ $htmlstr }}				
+{{ $html }}				
 										
 
     

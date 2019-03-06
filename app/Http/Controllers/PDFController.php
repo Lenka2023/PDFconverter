@@ -153,7 +153,7 @@ public function Convert_to_htm12(Request $request){
  $pdfDom = $pdf->getDom(['ignoreImages' => true]);
  //dd($pdfDom);
  //$pdfDom =$file->getDom();
-  dd($pdfDom);
+  //dd($pdfDom);
  //dd($pdf);
 //$pdfInfo = $pdf->getInfo();
 //dd($pdfInfo);
@@ -166,7 +166,7 @@ public function Convert_to_htm12(Request $request){
     echo $page . '<br/>';
   }*/
 // convert to html and return it as [Dom Object](https://github.com/paquettg/php-html-parser)
-//$html =$pdf->html();
+$html =$pdf->html();
 //$htmlstr=implode('',$html);
 //echo $html;
  //dd($html);
@@ -188,7 +188,7 @@ public function Convert_to_htm12(Request $request){
 
 // and then you can do as you please with that dom, you can find any element you want
 //$paragraphs = $html->find('body > p');
-//return view('show_html',compact('htmlstr'));
+return view('show_html',compact('html'));
 
 }
 }
