@@ -80,7 +80,7 @@
 	                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 	                                 <input type="file" name="pic">
 
-	                                  <!-- <input type="submit">-->
+	                                   <input type="submit">
 	                               <button > Convert_to_htm12</button>
 	                               <button > store</button>
 	                               <button > show</button>
