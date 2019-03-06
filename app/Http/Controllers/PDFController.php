@@ -129,9 +129,9 @@ public function Convert_to_htm12(Request $request){
   $pdf = new Dompdf();
   $pdf->loadHTML('<h1>Test</h1>');
   $file[]=$pdf->render('review.pdf');
- 	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'C:\poppler-0.68.0\bin/pdftohtml.exe');
+ 	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'poppler-0.68.0\bin/pdftohtml.exe');
 
-\Gufy\PdfToHtml\Config::set('pdfinfo.bin', 'C:\poppler-0.68.0\bin/pdfinfo.exe');
+\Gufy\PdfToHtml\Config::set('pdfinfo.bin', 'poppler-0.68.0\bin/pdfinfo.exe');
 //$file = dirname(__FILE__) . '/resources/git.pdf';
 //$file = dirname(__FILE__) . 'document.pdf';
 //$file = 'doc/document.pdf';
@@ -149,7 +149,7 @@ public function Convert_to_htm12(Request $request){
  $file=($request->file('pic'));
   //$file[]='D:\XAMPP\htdocs\myminilaravel5.loc\doc/document.pdf';
 //dd($file);
- $pdf = new \Gufy\PdfToHtml\Pdf('C:\document.pdf');
+ $pdf = new \Gufy\PdfToHtml\Pdf('doc/git.pdf');
  $pdfDom = $pdf->getDom(['ignoreImages' => true]);
  //dd($pdfDom);
  //$pdfDom =$file->getDom();
