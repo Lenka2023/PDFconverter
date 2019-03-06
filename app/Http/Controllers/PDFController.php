@@ -114,7 +114,7 @@ public function index()
      //"<img src='".$url."'/>";	
      } 	*/
     
-   /* public function store(Request $request) { 
+   public function store(Request $request) { 
 $file=$request->file('pic');
 return Storage::putFile('public/new',$file);
     }
@@ -123,7 +123,7 @@ return Storage::putFile('public/new',$file);
     // $url= Storage::url($file);
      // $url= "../uploads";
      //return "< src='$url'/>";	
-     }*/
+     }
 public function Convert_to_htm12(Request $request){
   //dd('convert');
   $pdf = new Dompdf();
@@ -147,9 +147,14 @@ public function Convert_to_htm12(Request $request){
 //$file = "git.pdf";
  //$file = "document.pdf";
  $file=($request->file('pic'));
-  //$file[]='D:\XAMPP\htdocs\myminilaravel5.loc\doc/document.pdf';
-//dd($file);
- $pdf = new \Gufy\PdfToHtml\Pdf('doc/git.pdf');
+ //dd($file);
+  $filename=$file->getClientOriginalName();
+ // dd("$filename");
+  $filepath=$file->getRealPath();
+  //dd( $filepath);
+  //Storage::putFile('public/new',$file);
+  move_uploaded_file($filepath, "uploads/$filename");
+ $pdf = new \Gufy\PdfToHtml\Pdf('uploads/'.$filename);
  $pdfDom = $pdf->getDom(['ignoreImages' => true]);
  //dd($pdfDom);
  //$pdfDom =$file->getDom();
@@ -169,7 +174,7 @@ public function Convert_to_htm12(Request $request){
 $html =$pdf->html();
 //$htmlstr=implode('',$html);
 //echo $html;
- //dd($html);
+ dd($html);
 //echo "<script>console.log( 'Debug Objects: " . $html . "' );</script>";
 // echo "<script type='text/javascript'>'console.log(  '123456 ' );'</script>";
 
@@ -188,7 +193,7 @@ $html =$pdf->html();
 
 // and then you can do as you please with that dom, you can find any element you want
 //$paragraphs = $html->find('body > p');
-return view('show_html',compact('html'));
+//return view('show_html',compact('html'));
 
 }
 }
