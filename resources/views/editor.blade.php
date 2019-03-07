@@ -7,166 +7,71 @@
             <br class="cbt">
             <div class="edit_cont">
                 <div class="middle">
-				<?php
-					/*if((isset($_SESSION['reg_succes']))&&($_SESSION['reg_succes']==1)){
-									echo "<p><span style='color:red;'>Succes registration</span></p>";
-									unset($_SESSION['reg_succes']);
-																}*/
-?>
-										<button onclick="Main_List()"> Main List</button>
-                                        <button onclick="Square_List()">Square List</button>
-                                        <button onclick="Decimal_List()">Decimal List</button>
-                                        <button onclick="Disc_List()">Disc List</button>
-                                        <button onclick="None_List()">None List</button>
-                                        <button onclick="Red_title()"> Red title</button>
-                                        <button onclick="Middle_Title()">Middle Title</button>
-                                        <button onclick="Down_title()">Down title</button>
-                                        <button onclick="DownPage_title()">DownPage title</button>
-                                        <button onclick="Small_title()">Small title</button>
-                                        <button onclick="Capture()">Capture</button>
-                                        <button onclick="Hot_Tip()">Hot Tip</button>
-                                        <button onclick="Code()">Code</button>
-                                        <button onclick="Smallicon()">SmallIcon</button>
-                                        <button onclick="Table()">Table</button>
-                                        <button onclick="Link()">Link</button>
-                                        <button onclick="Txt()">Text</button>
-                                        <button onclick="CBT()">CBT</button>
-                                        <button onclick="Image()">Image</button>
-                                        <button onclick="Listing()">Listing</button>
-                                        <button onclick="Bold()">Bold</button>
-                                        <button onclick="Top()">TopPage</button>
-                                        <button onclick="Down()">DownPage</button>
-                                        <button onclick="Down()">DownPage</button>
-
-                                        <br>
-                                        <button onclick="Extract_text()">Extract_text</button>
-                                        <button onclick="Replace_to_Server()">Replace_to_Server</button>
-                                       <!--<form action="/action_page.php" method="get">-->
-										  Select a file: <input type="file" name='file' id="myFile" onchange="inputFunction()"><br>
-										  <input type="submit">
-										 <!--</form>-->
-										  <button onclick="Convert_to_htm11()">Convert_to_htm11</button>                               
-										<iframe id="my_iframe" style="display:none;"></iframe>
-                                        <button onclick="Delete()">Delete</button>
-                                        <button onclick="Redo()" id='redo' disabled>Redo</button>
-                                        <button onclick="Undo()" id='undo' disabled>Undo</button>
-                                        <p><textarea id="text"  name="text"></textarea></p>
-                                    <div id="area" class="area">
-                                    <span id="RESULTHTML" onkeypress="myFunction();" onclick="getCaretPosition()" onkeypress="ChangeSelection"></span>
-                                   
-                                    </div>
-                                     <?php
-								         /*echo Form::open(array('url' => '/editor','files'=>'true'));
-								         echo 'Select the file to upload.';
-								         echo Form::file('image');
-								         echo Form::submit('Upload File');
-								         echo Form::close();*/
-								      ?>
-                                    <?php
-                                    //$file1=$_GET['file'];
-                                    //$file1="<script> var file</script>";
-                                    //$file="<script type='text/javascript'>'var x=inputFunction()'</script>";
-                                    //$file1="<script type='text/javascript'>'PDFfile'</script>";
-                                    //$file1=$_GET['PDFfile'];
-                                   // $file =  "document.pdf";
-									echo "<script type='text/javascript'>'console.log(  inputFunction());'</script>";
-
-                                    ?>
-                                     <!--<form action="pdf" method="GET">
-									<button onclick="pdf()"> pdf</button>	
-									</form>-->
-									 <form action="editor" id="contact_file" enctype="multipart/form-data"  method="post">
-									 	 {{ csrf_field() }}
-	                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-	                                 <input type="file" name="pic">
-
-	                                   <input type="submit">
-	                               <button > Convert_to_htm12</button>
-	                               <button > store</button>
-	                               <button > show</button>
-									<button > showUploadFile</button>
-	                                 </form>
-
-
-
-	                                 
-									<!--<form action="file_to_pdf" method="GET">
-									 Select a file: <input type="file" name='file' id="myFile" onchange="inputFunction()"><br>
-									
-									<input type="submit">
-	
-									<!--</form>
-									<form action="uploadfile" method="GET">
-									<button onclick="uploadFile()"> uploadFile</button>
-									
-									</form>-->
-                                    <form action="convert" method="GET">
-									<button onclick="Convert()"> Convert</button>	
-									</form>
-									<form action="convert" method="GET">
-									<button onclick="Convert2()"> Convert2</button>	
-									</form>
-									<form action="convert" method="GET">
-									<button onclick="Convert1()"> Convert1</button>	
-									</form>
-									
-									<button onclick="Send_to_DB()"> Send_to_DB</button>
-									<form action="editor" method="POST">
-									<input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
-	page:<input type="text" name="page" id="RESULSERVER"><br>
-	<input type="submit">
-	</form>
-	<form   id="logout1-form" action="{{ route('logout') }}" method="POST" >
-		 {{ csrf_field() }}
-	<input type='submit' name='out' value='Log out'/>
-	</form>
-<?php
-	/*if((isset($_POST['userid']))&&(!empty($_POST['submit']))){
-		$userinfoid=$_SESSION['userid'];
-															}
-	if((isset($_POST['userlogin']))&&(!empty($_POST['userlogin']))){
-		$userinfologin=$_SESSION['userlogin'];
-															}
-	
-	
-	
-	$db=new mysqli('localhost', 'Mysitefour', '00000', "mysite-local");
-	if(mysqli_connect_errno()){
-		printf("Error connect to DB:%S\n",mysqli_error($db));
-		exit();
-								}
-	if(!empty($_POST['page'])){print_r($_POST['page']);}
-	if(isset($_POST['page'])&&!empty($_POST['page'])){
-			$page=(string)$_POST['page'];
-			$query = "INSERT INTO Pages(text) VALUES ('$page')";
-			mysqli_query($db, $query);
-			$filename ='file.html';
-	$file=fopen($filename,"a");
-	if(!$file){
-		echo("Ошибка открытия файла");
-				}
-	fwrite($file, $page);
-	var_dump($file);
-	fclose($file);
-													}
-									
-	if (isset($_POST['out'])){
-    
-		unset($_SESSION['userid']);
-		unset($_SESSION['userlogin']);
-		session_unset();
-		$_SESSION = Array(); 
 		
-		session_destroy();
-		echo '<script>location.replace("index.php");</script>'; 
-		exit;
-								}*/
-	
-	
-			
-?>
+					<button onclick="Main_List()"> Main List</button>
+	                <button onclick="Square_List()">Square List</button>
+	                <button onclick="Decimal_List()">Decimal List</button>
+	                <button onclick="Disc_List()">Disc List</button>
+	                <button onclick="None_List()">None List</button>
+	                <button onclick="Red_title()"> Red title</button>
+	                <button onclick="Middle_Title()">Middle Title</button>
+	                <button onclick="Down_title()">Down title</button>
+	                <button onclick="DownPage_title()">DownPage title</button>
+	                <button onclick="Small_title()">Small title</button>
+	                <button onclick="Capture()">Capture</button>
+	                <button onclick="Hot_Tip()">Hot Tip</button>
+	                <button onclick="Code()">Code</button>
+	                <button onclick="Smallicon()">SmallIcon</button>
+	                <button onclick="Table()">Table</button>
+	                <button onclick="Link()">Link</button>
+	                <button onclick="Txt()">Text</button>
+	                <button onclick="CBT()">CBT</button>
+	                <button onclick="Image()">Image</button>
+	                <button onclick="Listing()">Listing</button>
+	                <button onclick="Bold()">Bold</button>
+	                <button onclick="Top()">TopPage</button>
+	                <button onclick="Down()">DownPage</button>
+	                <button onclick="Down()">DownPage</button>
+	                <br>
+	                <button onclick="Extract_text()">Extract_text</button>
+	                <button onclick="Replace_to_Server()">Replace_to_Server</button>
+					<iframe id="my_iframe" style="display:none;"></iframe>
+	                <button onclick="Delete()">Delete</button>
+	                <button onclick="Redo()" id='redo' disabled>Redo</button>
+	                <button onclick="Undo()" id='undo' disabled>Undo</button>
+	                <p><textarea id="text"  name="text"></textarea></p>
+	            <div id="area" class="area">
+	            <span id="RESULTHTML" onkeypress="myFunction();" onclick="getCaretPosition()" onkeypress="ChangeSelection"></span>
+	           
+	            </div>
+	            <form action="editor" id="contact_file" enctype="multipart/form-data"  method="post">
+				 	 {{ csrf_field() }}
+	                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+	                 <input type="file" name="pic">
+	                 <button > Convert_to_htm12</button>
+	          </form>
+	          <form action="convert" method="GET">
+				<button onclick="Convert()"> Convert</button>	
+			</form>
+				<form action="convert" method="GET">
+				<button onclick="Convert2()"> Convert2</button>	
+				</form>
+				<form action="convert" method="GET">
+				<button onclick="Convert1()"> Convert1</button>	
+				</form>
+				<button onclick="Send_to_DB()"> Send_to_DB</button>
+				<form action="editor" method="POST">
+					<input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
+					page:<input type="text" name="page" id="RESULSERVER"><br>
+					<input type="submit">
+				</form>
+				<form   id="logout1-form" action="{{ route('logout') }}" method="POST" >
+					 {{ csrf_field() }}
+					<input type='submit' name='out' value='Log out'/>
+				</form>
+
 		</div>
 	</div>
-        </div>
+ </div>
 		@stop 
 
