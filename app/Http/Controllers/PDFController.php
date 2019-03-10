@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Dompdf\Dompdf;
 use \Gufy\PdfToHtml\Config ;
+use Aws\Credentials\Credentials;
+use Aws\S3\S3Client;
 //use D\XAMPP\php\pear;
 include 'vendor/autoload.php';
 class PDFController extends Controller
@@ -68,14 +70,26 @@ return $pdf->download('convert1.pdf');
         $file[]=$pdf->render('review.pdf');
        	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'poppler-0.68.0\bin/pdftohtml.exe');
         \Gufy\PdfToHtml\Config::set('pdfinfo.bin', 'poppler-0.68.0\bin/pdfinfo.exe');
-        $file=($request->file('pic'));
+        $file=$request->file('pic');
        //dd($file);
         $filename=$file->getClientOriginalName();
-       // dd("$filename");
-        $filepath=$file->getRealPath();
+       //dd("$filename");
         //dd( $filepath);
         //Storage::putFile('public/new',$file);
+        //$file->storeAs('uploads',$filename);
+        /*if($request->hasFile('pic')){
+         $file=$request->file('pic'); 
+         $filename=$file->getClientOriginalName();
+        
+        $filepath=$file->getRealPath();
         move_uploaded_file($filepath, "uploads/$filename");
+        }else{
+          return 'No file selected';
+        }*/
+        $disk = Storage::disk('s3');
+$disk->put($filename, fopen($file, 'r+'));
+
+        //move_uploaded_file($filepath, "uploads/$filename");
        $pdf = new \Gufy\PdfToHtml\Pdf('uploads/'.$filename);
        $pdfDom = $pdf->getDom(['ignoreImages' => true]);
        //dd($pdfDom);
@@ -95,8 +109,8 @@ return $pdf->download('convert1.pdf');
       // convert to html and return it as [Dom Object](https://github.com/paquettg/php-html-parser)
       $html =$pdf->html();
       //$htmlstr=implode('',$html);
-      //echo $html;
-       dd($html);
+     echo $html;
+       //dd($html);
       //echo "<script>console.log( 'Debug Objects: " . $html . "' );</script>";
       // echo "<script type='text/javascript'>'console.log(  '123456 ' );'</script>";
 
