@@ -70,28 +70,27 @@ return $pdf->download('convert1.pdf');
         $file[]=$pdf->render('review.pdf');
        	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'poppler-0.68.0\bin/pdftohtml.exe');
         \Gufy\PdfToHtml\Config::set('pdfinfo.bin', 'poppler-0.68.0\bin/pdfinfo.exe');
-        $file=$request->file('pic');
-       //dd($file);
-        $filename=$file->getClientOriginalName();
-       //dd("$filename");
+        $file=$request->file('pic'); 
+        $filepath=$file->getRealPath();
         //dd( $filepath);
+         $filename=$file->getClientOriginalName();
+         $disk = Storage::disk('s3');
+         $disk->put($filename, fopen($filepath, 'r+'));
+
+       //dd("$filename");
+       
         //Storage::putFile('public/new',$file);
         //$file->storeAs('uploads',$filename);
         /*if($request->hasFile('pic')){
          $file=$request->file('pic'); 
-         $filename=$file->getClientOriginalName();
         
         $filepath=$file->getRealPath();
         move_uploaded_file($filepath, "uploads/$filename");
         }else{
           return 'No file selected';
         }*/
-        $disk = Storage::disk('s3');
-$disk->put($filename, fopen($file, 'r+'));
-
-        //move_uploaded_file($filepath, "uploads/$filename");
        $pdf = new \Gufy\PdfToHtml\Pdf('uploads/'.$filename);
-       $pdfDom = $pdf->getDom(['ignoreImages' => true]);
+        $pdfDom = $pdf->getDom(['ignoreImages' => true]);
        //dd($pdfDom);
        //$pdfDom =$file->getDom();
         //dd($pdfDom);
