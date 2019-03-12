@@ -33,8 +33,7 @@
 	                <button onclick="Down()">DownPage</button>
 	                <button onclick="Down()">DownPage</button>
 	                <br>
-	                <button onclick="Extract_text()">Extract_text</button>
-	                <button onclick="Replace_to_Server()">Replace_to_Server</button>
+	               
 					<iframe id="my_iframe" style="display:none;"></iframe>
 	                <button onclick="Delete()">Delete</button>
 	                <button onclick="Redo()" id='redo' disabled>Redo</button>
