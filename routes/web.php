@@ -26,11 +26,6 @@ Route::get('pdf', 'PDFController@pdf');
 Route::get('convert', 'PDFController@Convert2');
 Route::post('editor', 'PDFController@Convert_to_htm12');
 //Route::get('/uploadfile','UploadFileController@index');
-//Route::post('/uploadfile','UploadFileController@showUploadFile');
-//Route::get('editor','EditorController@uploadFile');
+
 //Route::get('/editor','EditorController@edit');
-//Route::post('/editor','PDFController@showUploadFile');
 Route::get('editor', 'PDFController@index');
-//Route::post('editor', 'PDFController@showUploadFile');
-//Route::post('editor', 'PDFController@store');
-//Route::get('show_html', 'PDFController@Convert_to_htm12');

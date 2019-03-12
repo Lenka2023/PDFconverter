@@ -35,25 +35,7 @@ return $pdf->download('convert1.pdf');
       	$pdf->render();
         $pdf->stream();
       }
-    public function myfunc(Request $request) {
-        if($request->hasFile('pic'))
-        {
-               $file=$request->file('pic');
-                dd($file);
-        }else{
-            echo "empty1";
-            }
-  }
-    public function uploadFile(Request $form){
-        if ($form->hasFile('pic'))
-        {
-            echo $form->file('pic');
-
-        }else{
-           echo "empty";
-    }
-    echo $form->testtest;
-  }
+   
     
     public function index()
    {   
@@ -69,55 +51,18 @@ return $pdf->download('convert1.pdf');
        	\Gufy\PdfToHtml\Config::set('pdftohtml.bin', 'poppler-0.68.0\bin/pdftohtml.exe');
         \Gufy\PdfToHtml\Config::set('pdfinfo.bin', 'poppler-0.68.0\bin/pdfinfo.exe');
         $file=($request->file('pic'));
-       //dd($file);
+       
         $filename=$file->getClientOriginalName();
-       // dd("$filename");
+       
         $filepath=$file->getRealPath();
-        //dd( $filepath);
-        //Storage::putFile('public/new',$file);
+        
         move_uploaded_file($filepath, "uploads/$filename");
        $pdf = new \Gufy\PdfToHtml\Pdf('uploads/'.$filename);
        $pdfDom = $pdf->getDom(['ignoreImages' => true]);
-       //dd($pdfDom);
-       //$pdfDom =$file->getDom();
-        //dd($pdfDom);
-       //dd($pdf);
-      //$pdfInfo = $pdf->getInfo();
-      //dd($pdfInfo);
-      //$countPages = $pdf->countPages();
-      //dd($countPages);
-      //dd($contentFirstPage);
-      //$total_pages = $pdf->getPages(0);
-      //dd($total_pages);
-      /*foreach ($pdf->getHtml()->getAllPages() as $page) {
-          echo $page . '<br/>';
-        }*/
-      // convert to html and return it as [Dom Object](https://github.com/paquettg/php-html-parser)
+       
       $html =$pdf->html();
-      //$htmlstr=implode('',$html);
-      //echo $html;
-       dd($html);
-      //echo "<script>console.log( 'Debug Objects: " . $html . "' );</script>";
-      // echo "<script type='text/javascript'>'console.log(  '123456 ' );'</script>";
-
-
-
-
-      // check if your pdf has more than one pages
-       
-       
-       
-       
-       
-      // Your pdf happen to have more than one pages and you want to go another page? Got it. use this command to change the current page to page 3
-      //$html->goToPage(0);
-      //$abc='1256554478999555655698';
-
-      // and then you can do as you please with that dom, you can find any element you want
-      //$paragraphs = $html->find('body > p');
-      //return view('show_html',compact('html'));
-
-}
+      dd($html);
+      }
 }
 
 
