@@ -38,10 +38,10 @@
 	                <button onclick="Delete()">Delete</button>
 	                <button onclick="Redo()" id='redo' disabled>Redo</button>
 	                <button onclick="Undo()" id='undo' disabled>Undo</button>
-	                <p><textarea id="text"  name="text"></textarea></p>
+	                <p><textarea id="text"  name="text"> {{ $html }}	</textarea></p>
 	            <div id="area" class="area">
 	            <span id="RESULTHTML" onkeypress="myFunction();" onclick="getCaretPosition()" onkeypress="ChangeSelection"></span>
-	           
+	          
 	            </div>
 	            <form action="editor" id="contact_file" enctype="multipart/form-data"  method="post">
 				 	 {{ csrf_field() }}
